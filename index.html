@@ -146,6 +146,7 @@ footer{
 <section id="exam" class="panel hidden">
  <button class="soft" onclick="backHome()">← قائمة الامتحانات</button>
  <h2 id="examTitle" style="margin-top:12px"></h2>
+ <div id="examTimer" role="timer" aria-live="off" style="position:sticky;top:8px;z-index:50;margin:12px 0;padding:14px 18px;border-radius:14px;background:#172554;color:#fff;text-align:center;font-size:22px;font-weight:900;box-shadow:0 5px 18px rgba(0,0,0,.18);border:2px solid #fbbf24">الوقت المتبقي: 20:00</div>
  <p class="sub">اختر إجابة واحدة لكل سؤال، ثم اضغط تسليم الاختيار من متعدد لعرض نتيجتك.</p>
  <div id="mcq"></div>
  <button class="primary" onclick="gradeExam()">تسليم أسئلة الاختيار من متعدد</button>
@@ -216,6 +217,33 @@ const exams = {
 const integratedExams = {"81": {"title": "علوم متكاملة – الصف الأول الثانوي – امتحان الدرس الثامن: تأثير الضوء والإشعاع الشمسي على البيئات المائية", "qs": [["تقل شدة الضوء كلما زاد العمق في المياه بسبب:", ["زيادة الملوحة", "امتصاص وتشتت الضوء", "زيادة الضغط", "زيادة الأكسجين"], 1, "تقل شدة الضوء مع زيادة العمق نتيجة امتصاص الماء للضوء وتشتته، وبالتالي تقل كمية الطاقة الضوئية المتاحة للكائنات."], ["المنطقة التي يصل إليها ضوء كافٍ لحدوث البناء الضوئي تسمى:", ["المنطقة المضيئة", "المنطقة المظلمة", "قاع المحيط", "المنطقة العميقة"], 0, "المنطقة المضيئة هي التي يتوافر فيها ضوء كافٍ يسمح للنباتات والعوالق النباتية بإجراء البناء الضوئي."], ["تعتمد عملية البناء الضوئي في النباتات المائية بصورة أساسية على:", ["الضغط", "الضوء", "الملوحة", "كثافة الماء"], 1, "تستخدم النباتات الطاقة الضوئية لتحويل الماء وثاني أكسيد الكربون إلى مواد غذائية وينتج الأكسجين."], ["من العوامل المؤثرة في نفاذ الضوء داخل الماء:", ["عكارة الماء", "شكل الأسماك", "حركة الأسماك", "لون الصخور فقط"], 0, "زيادة العكارة بسبب المواد العالقة والرواسب تقلل شفافية الماء وتحد من نفاذ الضوء."], ["تزداد قدرة الضوء على النفاذ في المياه عندما:", ["تزداد العكارة", "تقل المواد العالقة", "تزداد الرواسب", "تزداد الملوثات"], 1, "قلة المواد العالقة تجعل المياه أكثر شفافية، وبالتالي تسمح بنفاذ الضوء إلى أعماق أكبر."], ["يؤدي انخفاض الضوء في الأعماق إلى:", ["زيادة البناء الضوئي", "انخفاض معدل البناء الضوئي", "اختفاء الضغط", "زيادة درجة الحرارة دائمًا"], 1, "انخفاض شدة الضوء يقلل الطاقة اللازمة لحدوث البناء الضوئي، فينخفض معدله."], ["تمثل العوالق النباتية أهمية كبيرة لأنها:", ["تستهلك الأكسجين فقط", "تنتج الغذاء والأكسجين", "تمنع نفاذ الضوء", "تزيد ضغط الماء"], 1, "تقوم العوالق النباتية بالبناء الضوئي، وتعد من أهم المنتجات في الأنظمة البيئية المائية."], ["الأشعة الشمسية مصدر الطاقة الأساسي لعملية:", ["البناء الضوئي", "الترسيب", "الانضغاط", "تكوين الرواسب"], 0, "توفر الشمس الطاقة اللازمة لتحويل المواد غير العضوية إلى مواد عضوية خلال البناء الضوئي."], ["زيادة المواد العالقة في الماء تؤدي غالبًا إلى:", ["زيادة شفافية الماء", "تقليل نفاذ الضوء", "زيادة البناء الضوئي", "اختفاء العكارة"], 1, "المواد العالقة تشتت الضوء وتمتص جزءًا منه، مما يقلل وصوله إلى الأعماق."], ["يتأثر توزيع النباتات المائية أساسًا بمدى:", ["توافر الضوء", "زيادة الضغط فقط", "شكل قاع البحر", "حركة الأسماك فقط"], 0, "تحتاج النباتات المائية إلى الضوء لإتمام البناء الضوئي، ولذلك يرتبط توزيعها بمدى توافره."]], "essays": [["وضح العلاقة بين عمق الماء ومعدل البناء الضوئي.", "كلما زاد عمق الماء قلت شدة الضوء النافذ، وبالتالي يقل معدل البناء الضوئي تدريجيًا، وقد يتوقف عند الأعماق التي لا يصل إليها ضوء كافٍ."], ["فسر: تؤثر عكارة المياه في توزيع الكائنات المنتجة داخل البيئة المائية.", "لأن زيادة عكارة الماء تقلل نفاذ الضوء، مما يحد من عملية البناء الضوئي، وبالتالي تؤثر في نمو وتوزيع الكائنات المنتجة."]]}, "91": {"title": "علوم متكاملة – الصف الأول الثانوي – امتحان الدرس التاسع: تأثير الضغط المائي على الكائنات الحية", "qs": [["يزداد الضغط المائي كلما:", ["قل العمق", "زاد العمق", "قلت الملوحة", "زادت الإضاءة"], 1, "يزداد الضغط المائي نتيجة زيادة وزن عمود الماء الموجود فوق الكائن الحي كلما زاد العمق."], ["يرجع الضغط المائي عند الأعماق إلى:", ["وزن عمود الماء", "ضوء الشمس", "حركة الرياح", "درجة الإضاءة"], 0, "وزن الماء الموجود أعلى النقطة يؤدي إلى ضغط يؤثر في الأجسام الموجودة داخل الماء."], ["تتعرض الكائنات الحية في أعماق البحار لضغط:", ["منخفض", "مرتفع", "ثابت عند جميع الأعماق", "منعدم"], 1, "كلما زاد العمق زاد وزن عمود الماء، وبالتالي يرتفع الضغط المائي."], ["من تكيفات كائنات الأعماق:", ["امتلاك خصائص تساعدها على تحمل الضغط", "الاعتماد على ضوء الشمس دائمًا", "العيش دون ماء", "عدم الحاجة إلى الغذاء"], 0, "تمتلك كائنات الأعماق تكيفات تركيبية ووظيفية تساعدها على البقاء في ظروف الضغط المرتفع."], ["كلما زاد عمق الماء فإن الضغط:", ["يقل", "يزداد", "يختفي", "لا يتغير"], 1, "زيادة العمق تعني زيادة طول ووزن عمود الماء المؤثر على الكائن."], ["تتكيف بعض الكائنات في الأعماق مع الضغط المرتفع عن طريق:", ["خصائص تركيبية وفسيولوجية", "الاعتماد على البناء الضوئي", "العيش دون ماء", "عدم الحاجة إلى الغذاء"], 0, "تساعد التكيفات التركيبية والوظيفية الكائنات على استمرار العمليات الحيوية في ظروف الأعماق."], ["الضغط المائي يؤثر في:", ["الكائنات الحية فقط دون أجسامها", "أجسام الكائنات ووظائفها الحيوية", "لون الماء فقط", "ضوء الشمس فقط"], 1, "يمكن للضغط المرتفع أن يؤثر في تركيب الأجسام والعمليات الحيوية، ولذلك تحتاج كائنات الأعماق إلى تكيفات خاصة."], ["تكون الكائنات التي تعيش قرب سطح الماء معرضة لضغط:", ["أقل من كائنات الأعماق", "أكبر من كائنات الأعماق", "مساوٍ دائمًا", "منعدم تمامًا"], 0, "الضغط المائي قرب السطح أقل بسبب قلة وزن عمود الماء الموجود فوق الكائن."], ["من أسباب قدرة بعض أسماك الأعماق على البقاء:", ["تكيفها مع ظروف الضغط المرتفع", "اعتمادها على ضوء الشمس المباشر", "عدم تعرضها للماء", "انخفاض الضغط في الأعماق"], 0, "تمتلك أسماك الأعماق تكيفات تساعدها على تحمل الظروف البيئية الصعبة، ومنها الضغط المرتفع."], ["العلاقة بين عمق الماء والضغط المائي علاقة:", ["عكسية", "طردية", "ثابتة", "غير موجودة"], 1, "بزيادة العمق يزداد الضغط المائي، ولذلك فالعلاقة بينهما طردية."]], "essays": [["وضح كيف يتغير الضغط المائي بتغير العمق، مع تفسير السبب.", "يزداد الضغط المائي بزيادة العمق؛ بسبب زيادة وزن عمود الماء الموجود فوق الكائن الحي، ويقل الضغط كلما اقتربنا من سطح الماء."], ["اذكر كيف تساعد التكيفات التركيبية والوظيفية كائنات الأعماق على تحمل الضغط المرتفع.", "تساعد التكيفات التركيبية والوظيفية على تقليل تأثير الضغط المرتفع على أجسام الكائنات، والحفاظ على كفاءة العمليات الحيوية واستمرار حياتها في الأعماق."]]}};
 
 let student={},current=7,mcqGraded=false;
+const EXAM_DURATION_MS = 20 * 60 * 1000;
+let examTimerInterval = null, examDeadline = null, examLocked = false;
+function attemptKey(examId){
+ return "abanob_exam_attempt_" + (student.code || "guest") + "_" + examId;
+}
+function stopExamTimer(){
+ if(examTimerInterval){clearInterval(examTimerInterval);examTimerInterval=null;}
+}
+function lockExpiredExam(){
+ if(examLocked)return;
+ examLocked=true;stopExamTimer();
+ document.querySelectorAll('#exam input,#exam textarea,#exam button').forEach(el=>el.disabled=true);
+ const timer=document.getElementById('examTimer');
+ if(timer){timer.textContent="انتهى وقت الامتحان";timer.style.background="#fff0f0";timer.style.color="#a12626";}
+ alert("انتهى وقت الامتحان (20 دقيقة). تم إغلاق المحاولة ولا يمكن فتح الامتحان مرة أخرى.");
+}
+function updateExamTimer(){
+ const left=examDeadline-Date.now();
+ if(left<=0){lockExpiredExam();return;}
+ const mins=Math.floor(left/60000),secs=Math.floor((left%60000)/1000);
+ const timer=document.getElementById('examTimer');
+ if(timer)timer.textContent="الوقت المتبقي: "+String(mins).padStart(2,'0')+":"+String(secs).padStart(2,'0');
+}
+function startExamTimer(){
+ stopExamTimer();examLocked=false;examDeadline=Date.now()+EXAM_DURATION_MS;
+ updateExamTimer();examTimerInterval=setInterval(updateExamTimer,1000);
+}
 function loginStudent(){
  const name=document.getElementById('studentName').value.trim(), no=document.getElementById('studentNo').value.trim(), guardian=document.getElementById('guardianNo').value.trim(), code=document.getElementById('code').value.trim().toUpperCase();
  const err=document.getElementById('loginError');
@@ -228,8 +256,20 @@ function loginStudent(){
  document.getElementById('login').classList.add('hidden');document.getElementById('home').classList.remove('hidden');
 }
 function logout(){document.getElementById('home').classList.add('hidden');document.getElementById('exam').classList.add('hidden');document.getElementById('login').classList.remove('hidden')}
-function backHome(){document.getElementById('exam').classList.add('hidden');document.getElementById('home').classList.remove('hidden')}
+function backHome(){
+ if(!examLocked && examDeadline && Date.now()<examDeadline){
+  alert("لا يمكن الرجوع إلى قائمة الامتحانات أثناء المحاولة. أكمل الامتحان ثم سلّمه.");
+  return;
+ }
+ stopExamTimer();document.getElementById('exam').classList.add('hidden');document.getElementById('home').classList.remove('hidden');
+}
 function openExam(n){
+ const key=attemptKey(n);
+ if(localStorage.getItem(key)){
+  alert("لقد بدأت هذا الامتحان من قبل. النظام يسمح بمحاولة واحدة فقط لكل كود تفعيل.");
+  return;
+ }
+ localStorage.setItem(key,JSON.stringify({startedAt:Date.now(),duration:EXAM_DURATION_MS}));
  current=n;mcqGraded=false;window.integratedEssayScore=0;const e=(n===81||n===91)?integratedExams[String(n)]:exams[n];
  document.getElementById('home').classList.add('hidden');document.getElementById('exam').classList.remove('hidden');
  document.getElementById('examTitle').textContent=e.title;
@@ -238,6 +278,7 @@ function openExam(n){
  const isIntegrated=(current===81||current===91);
  document.getElementById('essays').innerHTML='<h2 style="margin-top:22px">ثانيًا: الأسئلة المقالية (لكل سؤال 5 درجات)</h2><p class="sub">'+(isIntegrated?'اكتب إجابتك، ثم قارنها بالإجابة النموذجية وقيّم إجابتك.':'اكتب الناتج النهائي فقط، ويمكن كتابة الوحدة أو تركها. لن تظهر الإجابة الصحيحة قبل التسليم.')+'</p>'+e.essays.map((q,i)=>`<div class="essay"><b>السؤال المقالي ${i+1}:</b><p>${q[0]}</p><label for="essayText${i}" style="margin-top:10px">إجابتك</label>${isIntegrated?`<textarea id="essayText${i}" rows="3" style="width:100%;padding:10px;border:1px solid #cfd7e5;border-radius:10px;font:inherit"></textarea><div id="modelAnswer${i}" class="sub hidden" style="margin-top:8px;padding:10px;background:#f0f8f4;border-radius:8px"><b>الإجابة النموذجية:</b> ${q[1]}</div><div id="essayMark${i}" class="sub" style="margin-top:8px"></div>`:`<input id="essayText${i}" type="text" inputmode="decimal" placeholder="اكتب الناتج النهائي فقط"><div id="essayMark${i}" class="sub"></div>`}</div>`).join('')+'<button class="gold" onclick="submitEssays()">تسليم المقالي وعرض النتيجة النهائية</button><div id="essayFeedback"></div>';
  document.querySelector('#exam > button.primary').disabled=false;
+ startExamTimer();
 }
 function gradeExam(){
  if(mcqGraded)return;
